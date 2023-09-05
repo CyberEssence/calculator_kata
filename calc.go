@@ -25,16 +25,16 @@ func main() {
 
 	switch {
 		case first_checker != second_checker:
-			fmt.Println(first_error)
+			panic(first_error)
 
 		case (check(symbol) != "symbol") || (check(first_number) != "rome" && check(first_number) != "arabic") || (check(second_number) != "rome" && check(second_number) != "arabic"):
-			fmt.Println(second_error)
+			panic(second_error)
 
 		case (check(first_number) == "rome" && check(second_number) == "arabic") || check(first_number) == "arabic" && check(second_number) == "rome":
-			fmt.Println(third_error)
+			panic(third_error)
 
 		case check(symbol) == "symbol" && check(first_number) == "rome" && check(second_number) == "rome" && answer < 1:
-			fmt.Println(fouth_error)
+			panic(fouth_error)
 
 		case check(symbol) == "symbol" && check(first_number) == "arabic" && check(second_number) == "arabic":
 			fmt.Println(answer)
